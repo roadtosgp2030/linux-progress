@@ -2,16 +2,16 @@
 
 ## 1. Cấu trúc thư mục gốc (/)
 
-| Thư mục | Ý nghĩa |
-|---------|---------|
-| `/home` | Thư mục của user (`/home/ducwe`) |
-| `/etc` | Config hệ thống và service (nginx, ssh...) |
-| `/var` | Log, data thay đổi thường xuyên (`/var/log`) |
-| `/usr` | Chương trình đã cài (`/usr/bin`) |
-| `/tmp` | File tạm, tự xóa khi reboot |
-| `/proc` | Thông tin process đang chạy (ảo) |
-| `/bin`, `/sbin` | Lệnh hệ thống cơ bản |
-| `/root` | Thư mục home của user root |
+| Thư mục         | Ý nghĩa                                      |
+| --------------- | -------------------------------------------- |
+| `/home`         | Thư mục của user (`/home/ducwe`)             |
+| `/etc`          | Config hệ thống và service (nginx, ssh...)   |
+| `/var`          | Log, data thay đổi thường xuyên (`/var/log`) |
+| `/usr`          | Chương trình đã cài (`/usr/bin`)             |
+| `/tmp`          | File tạm, tự xóa khi reboot                  |
+| `/proc`         | Thông tin process đang chạy (ảo)             |
+| `/bin`, `/sbin` | Lệnh hệ thống cơ bản                         |
+| `/root`         | Thư mục home của user root                   |
 
 > `~` là shortcut trỏ đến `/home/ducwe`
 
@@ -28,6 +28,7 @@ cd ~         # về home directory
 ```
 
 ### Đọc output của `ls -la`
+
 ```
 drwxr-xr-x  2  ducwe  ducwe  4096  May 1  .
 │││││││││││     │      │
@@ -67,6 +68,7 @@ tail -f file1.txt       # theo dõi file realtime (Ctrl+C để thoát)
 ```
 
 ### Ghi nội dung vào file
+
 ```bash
 echo "nội dung" > file.txt    # ghi đè
 echo "nội dung" >> file.txt   # thêm vào cuối
@@ -87,7 +89,9 @@ tail -f file1.txt | grep "ERROR"   # lọc log realtime
 ```
 
 ### Pipe `|`
+
 Lấy output của lệnh bên trái làm input cho lệnh bên phải:
+
 ```bash
 cat file1.txt | grep "linux" | head -n 1
 ```
@@ -97,6 +101,7 @@ cat file1.txt | grep "linux" | head -n 1
 ## 6. Phân quyền file
 
 ### Cấu trúc permissions
+
 ```
 -  rw-  r--  r--
 │   │    │    │
@@ -106,14 +111,15 @@ cat file1.txt | grep "linux" | head -n 1
 └──────────────  loại (- file, d dir, l link)
 ```
 
-| Ký tự | Quyền | Giá trị số |
-|-------|-------|-----------|
-| `r` | read | 4 |
-| `w` | write | 2 |
-| `x` | execute | 1 |
-| `-` | không có | 0 |
+| Ký tự | Quyền    | Giá trị số |
+| ----- | -------- | ---------- |
+| `r`   | read     | 4          |
+| `w`   | write    | 2          |
+| `x`   | execute  | 1          |
+| `-`   | không có | 0          |
 
 ### chmod
+
 ```bash
 chmod u+x script.sh      # thêm quyền thực thi cho owner
 chmod go-w script.sh     # bỏ quyền ghi của group và others
@@ -123,13 +129,15 @@ chmod 600 .env           # rw------- (file bảo mật)
 ```
 
 ### Quyền hay gặp
-| Chmod | Permissions | Dùng cho |
-|-------|-------------|---------|
-| `755` | `rwxr-xr-x` | Script, thư mục |
+
+| Chmod | Permissions | Dùng cho                  |
+| ----- | ----------- | ------------------------- |
+| `755` | `rwxr-xr-x` | Script, thư mục           |
 | `644` | `rw-r--r--` | File thông thường, config |
-| `600` | `rw-------` | File bảo mật (.env, key) |
+| `600` | `rw-------` | File bảo mật (.env, key)  |
 
 ### chown
+
 ```bash
 chown ducwe file.txt            # đổi owner
 chown ducwe:ducwe file.txt      # đổi owner và group
@@ -137,9 +145,11 @@ sudo chown root:root file.txt   # cần sudo khi đổi sang root
 ```
 
 ### Group
+
 ```bash
 groups          # xem bạn thuộc group nào
 ```
+
 - Mỗi user có một group mặc định cùng tên
 - Group `sudo` = được phép chạy lệnh với `sudo`
 - Hay gặp: `sudo usermod -aG docker ducwe` để chạy Docker không cần sudo
@@ -147,6 +157,10 @@ groups          # xem bạn thuộc group nào
 ---
 
 ## Nguyên tắc quan trọng
+
 - **Principle of least privilege:** cấp đúng quyền cần thiết, không hơn không kém
 - **`rm -r` không có thùng rác** — cẩn thận trên server thật
 - **`sudo`** = chạy với quyền admin, chỉ dùng khi cần thiết
+
+Học lần đầu: 01/05/2026
+Revise lần 1: 02/05/2026
