@@ -5,7 +5,7 @@
 ### Xem process
 
 ```bash
-ps                  # process trong terminal hiện tại
+ps                  # process trong terminal hiện  tại
 ps aux              # tất cả process của mọi user
 top                 # realtime (giống Task Manager)
 ```
