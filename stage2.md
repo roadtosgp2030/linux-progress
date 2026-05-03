@@ -139,10 +139,71 @@ free -h
 
 ---
 
-## Phần chưa học (buổi sau)
+## 4. Log
 
-- Log: `tail -f /var/log/syslog`, `journalctl`
-- Service: `systemctl start/stop/status`
+### journalctl — đọc system journal
+
+systemd ghi toàn bộ log vào một binary database gọi là *journal*. `journalctl` là công cụ để query database đó.
+
+```bash
+journalctl -n 20 --no-pager        # 20 dòng gần nhất, không dùng pager
+journalctl -f                       # follow real-time (Ctrl+C để thoát)
+journalctl -u nginx --no-pager     # chỉ log của một service (-u = unit)
+journalctl --since "5 minutes ago" --no-pager
+journalctl --since "14:00" --until "14:30" --no-pager
+```
+
+**Cấu trúc mỗi dòng log:**
+```
+May 03 13:46:08   vuduc   systemd[1]:   Starting motd-news.service...
+   └─ thời gian   └─ host  └─ service[PID]   └─ nội dung
+```
+
+| Lệnh | Dùng khi |
+|---|---|
+| `journalctl -n 50 --no-pager` | Xem nhanh log gần nhất |
+| `journalctl -f` | Theo dõi real-time khi deploy |
+| `journalctl -u nginx` | Chỉ xem log của một service |
+| `journalctl --since "5 minutes ago"` | Khoanh vùng theo thời gian |
+
+---
+
+## 5. Service
+
+### systemctl — quản lý service
+
+```bash
+systemctl status nginx              # xem trạng thái
+sudo systemctl start nginx          # khởi động
+sudo systemctl stop nginx           # dừng
+sudo systemctl restart nginx        # restart sau khi thay đổi config
+sudo systemctl enable nginx         # tự chạy khi boot
+sudo systemctl disable nginx        # không tự chạy khi boot
+```
+
+**Đọc output của `systemctl status`:**
+
+```
+Loaded: loaded (...; enabled; ...)   ← enabled = tự chạy khi boot
+Active: active (running)             ← đang chạy
+Active: inactive (dead)              ← đang tắt
+Active: failed                       ← bị crash
+```
+
+**Phân biệt start vs enable:**
+
+| | Ý nghĩa |
+|---|---|
+| `start/stop` | Bật/tắt ngay lúc này |
+| `enable/disable` | Có tự chạy khi boot không |
+
+> Sau khi deploy, luôn nhớ `sudo systemctl enable ten-service` để app tự sống lại khi server restart.
+
+**nginx có kiến trúc master + worker:**
+- 1 master process quản lý
+- Nhiều worker process xử lý request (số lượng = số CPU core)
+
+---
 
 Học lần đầu: 02/05/2026
-Đang học dở
+Hoàn thành: 03/05/2026
