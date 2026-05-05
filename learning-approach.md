@@ -10,6 +10,15 @@
 
 ---
 
+## Cách ôn tập theo lần
+
+| Lần ôn | Format |
+|--------|--------|
+| Lần 1 | Lý thuyết nhanh + thực hành có hướng dẫn |
+| Lần 2+ | **Claude ra bài tập → User triển khai → Claude check kết quả** (không nhắc lý thuyết trước) |
+
+---
+
 ## Các nguyên tắc trong session này
 
 **1. Lý thuyết tối thiểu, thực hành ngay**
