@@ -67,7 +67,7 @@
 |---|---|---|---|---|
 | Stage 1 | 01/05/2026 | 02/05 ✅ | 05/05 ✅ | 08/05 |
 | Stage 2 (3/5 đầu) | 02/05/2026 | 03/05 ✅ | 05/05 ✅ | 09/05 |
-| Stage 2 (2/5 còn lại) | 03/05/2026 | 05/05 ⏳ chưa xong | 06/05 | 10/05 |
+| Stage 2 (2/5 còn lại) | 03/05/2026 | 06/05 ✅ | 06/05 ✅ | 10/05 |
 
 > Khi bắt đầu session mới, hãy tính xem hôm nay có nội dung nào đến hạn ôn không, sau đó mới học tiếp phần mới.
 
