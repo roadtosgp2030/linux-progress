@@ -52,8 +52,8 @@
 |-----------|-----------|
 | Giai đoạn 1 — Nền tảng | Hoàn thành |
 | Giai đoạn 2 — Vận hành hệ thống | Hoàn thành |
-| Giai đoạn 3 — Docker | Đang học (11/05/2026) |
-| Giai đoạn 4 — Shell scripting | Chưa bắt đầu |
+| Giai đoạn 3 — Docker | Hoàn thành (13/05/2026) |
+| Giai đoạn 4 — Shell scripting | Hoàn thành (13/05/2026) |
 
 ---
 
@@ -68,7 +68,8 @@
 | Stage 1 | 01/05/2026 | 02/05 ✅ | 05/05 ✅ | 11/05 ✅ | 25/05 |
 | Stage 2 (3/5 đầu) | 02/05/2026 | 03/05 ✅ | 05/05 ✅ | 11/05 ✅ | 25/05 |
 | Stage 2 (2/5 còn lại) | 03/05/2026 | 06/05 ✅ | 06/05 ✅ | 11/05 ✅ | 25/05 |
-| Stage 3 — Docker | 11/05/2026 | 12/05 | 14/05 | 18/05 | 01/06 |
+| Stage 3 — Docker | 13/05/2026 | 14/05 | 16/05 | 20/05 | 03/06 |
+| Stage 4 — Shell scripting | 13/05/2026 | 14/05 | 16/05 | 20/05 | 03/06 |
 
 > Khi bắt đầu session mới, hãy tính xem hôm nay có nội dung nào đến hạn ôn không, sau đó mới học tiếp phần mới.
 
