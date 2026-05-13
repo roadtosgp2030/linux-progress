@@ -30,19 +30,30 @@
 ## Giai đoạn 3 — Kết hợp Docker
 > Song song với Giai đoạn 2
 
-- [ ] Linux namespaces & cgroups (nền tảng của container)
-- [ ] `docker exec` vào container và dùng lệnh Linux bên trong
-- [ ] Đọc hiểu `Dockerfile`: `RUN`, `COPY`, `WORKDIR`
-- [ ] Xem log container: `docker logs -f`
-- [ ] Mount volume và Linux file permissions
+- [x] Linux namespaces & cgroups (nền tảng của container)
+- [x] `docker exec` vào container và dùng lệnh Linux bên trong
+- [x] Đọc hiểu `Dockerfile`: `RUN`, `COPY`, `WORKDIR`
+- [x] Xem log container: `docker logs -f`
+- [x] Mount volume và Linux file permissions
 
 ---
 
 ## Giai đoạn 4 — Shell scripting cơ bản
 
-- [ ] Biến, vòng lặp, điều kiện
-- [ ] Pipe `|` và redirect `>`, `>>`
-- [ ] Viết script thực tế (backup, deploy, health check)
+- [x] Biến, vòng lặp, điều kiện
+- [x] Pipe `|` và redirect `>`, `>>`
+- [x] Viết script thực tế (backup, deploy, health check)
+
+---
+
+## Giai đoạn 5 — Linux Networking & Security
+> Tài liệu: `stage5.md` | Học: 13/05/2026
+
+- [ ] Firewall với `ufw`: allow, deny, delete rules
+- [ ] SSH hardening: key-based auth, `sshd_config`, `fail2ban`
+- [ ] Debug network: `ss -tlnp`, `tcpdump`
+- [ ] DNS & name resolution: `dig`, `/etc/hosts`, `/etc/resolv.conf`
+- [ ] Kiểm tra kết nối: `ping`, `traceroute`, `ip route`, `curl -v`
 
 ---
 
@@ -54,6 +65,7 @@
 | Giai đoạn 2 — Vận hành hệ thống | Hoàn thành |
 | Giai đoạn 3 — Docker | Hoàn thành (13/05/2026) |
 | Giai đoạn 4 — Shell scripting | Hoàn thành (13/05/2026) |
+| Giai đoạn 5 — Networking & Security | Đang học (13/05/2026) |
 
 ---
 
@@ -70,6 +82,7 @@
 | Stage 2 (2/5 còn lại) | 03/05/2026 | 06/05 ✅ | 06/05 ✅ | 11/05 ✅ | 25/05 |
 | Stage 3 — Docker | 13/05/2026 | 14/05 | 16/05 | 20/05 | 03/06 |
 | Stage 4 — Shell scripting | 13/05/2026 | 14/05 | 16/05 | 20/05 | 03/06 |
+| Stage 5 — Networking & Security | 13/05/2026 | 14/05 | 16/05 | 20/05 | 03/06 |
 
 > Khi bắt đầu session mới, hãy tính xem hôm nay có nội dung nào đến hạn ôn không, sau đó mới học tiếp phần mới.
 
